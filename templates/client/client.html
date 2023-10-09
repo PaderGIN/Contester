@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача A. A+B 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .problem-statement {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        legend {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #e0e0e0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .property-title {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #357ae8;
+        }
+
+        .sample-tests {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .sample-tests th, .sample-tests td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .sample-tests th {
+            background-color: #f2f2f2;
+        }
+
+        .sample-tests td pre {
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="problem-statement">
+    <div class="header">
+        <h1 class="title">A. A+B 1</h1>
+        <table>
+            <tr class="time-limit">
+                <td class="property-title">Ограничение времени</td>
+                <td>2 секунды</td>
+            </tr>
+            <tr class="memory-limit">
+                <td class="property-title">Ограничение памяти</td>
+                <td>64Mb</td>
+            </tr>
+            <tr class="input-file">
+                <td class="property-title">Ввод</td>
+                <td colspan="1">стандартный ввод или input.txt</td>
+            </tr>
+            <tr class="output-file">
+                <td class="property-title">Вывод</td>
+                <td colspan="1">стандартный вывод или output.txt</td>
+            </tr>
+        </table>
+    </div>
+    <h2></h2>
+    <div class="legend"> Даны два числа
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>A</mi>
+        </math>
+        и
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>B</mi>
+        </math>
+        .
+        Вам нужно вычислить их сумму
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>A</mi>
+            <mo>+</mo>
+            <mi>B</mi>
+        </math>
+        . В этой задаче для работы с входными и выходными данными вы можете использовать и файлы и потоки
+        на ваше усмотрение.
+    </div>
+    <h2>Формат ввода</h2>
+    <div class="input-specification"> Первая строка входа содержит числа
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>A</mi>
+        </math>
+        и
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>B</mi>
+        </math>
+        (
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>−</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mn>1</mn>
+            <msup>
+                <mrow>
+                    <mn>0</mn>
+                </mrow>
+                <mrow>
+                    <mn>9</mn>
+                </mrow>
+            </msup>
+            <mo>≤</mo>
+            <mi>A</mi>
+            <mo>,</mo>
+            <mi>B</mi>
+            <mo>≤</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mn>1</mn>
+            <msup>
+                <mrow>
+                    <mn>0</mn>
+                </mrow>
+                <mrow>
+                    <mn>9</mn>
+                </mrow>
+            </msup>
+        </math>
+        ) разделенные
+        пробелом
+    </div>
+    <h2>Формат вывода</h2>
+    <div class="output-specification"> В единственной строке выхода выведите сумму чисел
+        <math display="inline" style="text-indent: 0em;" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>A</mi>
+            <mo>+</mo>
+            <mi>B</mi>
+        </math>
+    </div>
+    <h3>Пример 1</h3>
+    <table class="sample-tests">
+        <thead>
+        <tr>
+            <th>Ввод</th>
+            <th>Вывод</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <pre>2 2</pre>
+            </td>
+            <
+            <td>
+                <pre>4</pre>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Пример 2</h3>
+    <table class="sample-tests">
+        <thead>
+        <tr>
+            <th>Ввод</th>
+            <th>Вывод</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <pre>57 43</pre>
+            </td>
+            <td>
+                <pre>100</pre>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Пример 3</h3>
+    <table class="sample-tests">
+        <thead>
+        <tr>
+            <th>Ввод</th>
+            <th>Вывод</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <pre>123456789 673243342</pre>
+            </td>
+            <td>
+                <pre>796700131</pre>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .task-list {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .task {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-title {
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .task-description {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .task-link {
+            text-decoration: none;
+            color: #4285f4;
+            font-weight: bold;
+        }
+
+        .task-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="task-list">
+    <div class="task">
+        <h2 class="task-title"><a class="task-link" href="/task/1">Задача A. A+B 1</a></h2>
+        <p class="task-description">Даны два числа A и B. Вам нужно вычислить их сумму A + B.</p>
+    </div>
+    <div class="task">
+        <h2 class="task-title"><a class="task-link" href="/task/2">Задача B. Умножение</a></h2>
+        <p class="task-description">Даны два числа A и B. Вам нужно вычислить их произведение A * B.</p>
+    </div>
+    <!-- Добавьте другие задачи здесь -->
+</div>
+</body>
+</html>

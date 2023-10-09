@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание задачи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0070de;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0070de;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0059b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Создание задачи</h1>
+    </header>
+    <main>
+        <form method="post" action="/admin/create_task/">
+            <div class="form-group">
+                <label for="name">Название задачи:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Описание:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="time_limit">Ограничение времени (в секундах):</label>
+                <input type="number" id="time_limit" name="time_limit" required>
+            </div>
+            <div class="form-group">
+                <label for="memory_limit">Ограничение памяти (в Mb):</label>
+                <input type="number" id="memory_limit" name="memory_limit" required>
+            </div>
+            <div class="form-group">
+                <label for="num_pairs">Количество пар (input_data и expected_output_data):</label>
+                <input type="text" id="num_pairs" name="num_pairs" min="1" required>
+            </div>
+            <div id="dynamic_fields">
+                <!-- Динамические поля будут добавлены сюда -->
+            </div>
+            <button type="submit">Создать задачу</button>
+        </form>
+    </main>
+    <script>
+        // Обработчик изменения количества пар
+        document.getElementById("num_pairs").addEventListener("change", function() {
+            createDynamicFields(this.value);
+        });
+
+        // Функция для создания динамических полей
+        function createDynamicFields(numPairs) {
+            const dynamicFields = document.getElementById("dynamic_fields");
+            dynamicFields.innerHTML = "";
+
+            for (let i = 0; i < numPairs; i++) {
+                const inputName = `input_data_${i}`;
+                const outputName = `expected_output_${i}`;
+
+                const inputLabel = document.createElement("label");
+                inputLabel.textContent = `Input Data ${i + 1}:`;
+
+                const inputTextarea = document.createElement("textarea");
+                inputTextarea.setAttribute("name", inputName);
+                inputTextarea.setAttribute("required", "");
+
+                const outputLabel = document.createElement("label");
+                outputLabel.textContent = `Expected Output ${i + 1}:`;
+
+                const outputTextarea = document.createElement("textarea");
+                outputTextarea.setAttribute("name", outputName);
+                outputTextarea.setAttribute("required", "");
+
+                dynamicFields.appendChild(inputLabel);
+                dynamicFields.appendChild(inputTextarea);
+                dynamicFields.appendChild(outputLabel);
+                dynamicFields.appendChild(outputTextarea);
+            }
+        }
+    </script>
+</body>
+</html>
